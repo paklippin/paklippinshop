@@ -144,3 +144,5 @@ export default function ProductGrid({ limit, filter = 'all', categoryFilter }: P
   );
 }
 // cache bust 1790620215
+
+// build: 2026-09-28 sale filter v2
