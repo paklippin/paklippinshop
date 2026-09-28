@@ -32,7 +32,7 @@ export default function ProductGrid({ limit, filter = 'all', categoryFilter }: P
     let list = allProducts;
 
     // Filter: sale
-    if (filter === 'sale') list = list.filter((p: any) => p.badge?.toLowerCase() === 'sale');
+    if (filter === 'sale') list = list.filter((p: any) => String(p.badge || '').toLowerCase() === 'sale');
     // Filter: new
     if (filter === 'new')  list = list.filter((p) => p.badge?.toLowerCase() === 'new');
     // Filter: category
