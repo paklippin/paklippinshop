@@ -2,7 +2,7 @@ export const runtime = 'edge';
 import { NextRequest, NextResponse } from 'next/server';
 import { sendEmail, orderPlacedHtml, orderStatusHtml } from '@/lib/email';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://shop.paklippin.com';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://paklippinshop.paklippin.workers.dev';
 
 export async function GET(req: NextRequest) {
   const email = req.nextUrl.searchParams.get('email') || '';
