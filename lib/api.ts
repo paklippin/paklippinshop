@@ -13,11 +13,11 @@ export const FALLBACK_PRODUCTS: Product[] = [
 
 function normalize(raw: any, idx: number): Product {
   const price         = Number(raw.price ?? raw.sale_price ?? 0);
-  const originalPrice = Number(raw.originalPrice ?? raw.old_price ?? raw.compare_price ?? price);
+  const originalPrice = Number(raw.originalPrice ?? raw.original_price ?? raw.old_price ?? raw.compare_price ?? price);
   return {
     id:            Number(raw.id ?? idx + 1),
     name:          String(raw.name ?? 'Unnamed'),
-    category:      String(raw.category ?? 'General'),
+    category:      String(raw.category ?? raw.category_id ?? 'General'),
     price,
     originalPrice: originalPrice > price ? originalPrice : price,
     rating:        Number(raw.rating ?? 4.5),
